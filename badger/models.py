@@ -607,3 +607,28 @@ class Progress(models.Model):
         self.counter -= amount
         self._quiet_save(raise_exception)
         return self
+
+class Rule(object):
+    
+    def __init__(self):
+        pass
+
+    def satisfy(self):
+        return True
+
+class BadgeAwarder(object):
+    def __init__(self,awardee,badge_type,**kwargs):
+        self.awardee = awardee
+        self.badge_type = badge_type
+        self.context = kwargs
+
+    def before_award(self):
+        pass
+
+    def award_badge(self):
+        result = self.before_award()
+        if not result:
+            return
+        badge = Badge.objects.get(slug=self.badge_type)
+        badge.award_to(self.awardee)
+

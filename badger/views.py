@@ -85,8 +85,9 @@ def detail(request, slug, format="html"):
         resp['Content-Type'] = 'application/json'
         return resp
     else:
+        allow_award = badge.allows_award_to(request.user)
         return render_to_response('badger/badge_detail.html', dict(
-            badge=badge, award_list=awards,
+            badge=badge, award_list=awards,allow_award=allow_award,
         ), context_instance=RequestContext(request))
 
 
