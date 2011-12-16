@@ -277,6 +277,7 @@ class Badge(models.Model):
     creator = models.ForeignKey(User, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, blank=False)
     modified = models.DateTimeField(auto_now=True, blank=False)
+    points = models.IntegerField()
 
     class Meta:
         unique_together = ('title', 'slug')
@@ -608,13 +609,6 @@ class Progress(models.Model):
         self._quiet_save(raise_exception)
         return self
 
-class Rule(object):
-    
-    def __init__(self):
-        pass
-
-    def satisfy(self):
-        return True
 
 class BadgeAwarder(object):
     def __init__(self,awardee,badge_type,**kwargs):

@@ -2,10 +2,14 @@
     {% for badge in badge_list %}
         {%with img_url=badge.image.url|default:"/media/img/default-badge.png" %}
         <li class="badge">
-            <a href="{{ badge.get_absolute_url }}" class="image"><img src="{{ img_url }}"
-                alt="{{ badge.title }}" width="128" height="128" /></a>
-            <a href="{{ badge.get_absolute_url }}" class="label"><span class="title">{{ badge.title }}</span></a>
+            <div class="image"><a href="{{ badge.get_absolute_url }}" class="image"><img src="{{ img_url }}"
+                alt="{{ badge.title }}" /></a>
+                </div>
+            <a href="{{ badge.get_absolute_url }}"><h2 class="title">{{ badge.title }}</h2></a>
+            <div class="description">{{badge.description}}</div>
+            <div class="clearfix"></div>
         </li>
+        <div class="badge-bottom"></div>
         {% endwith %}
     {% endfor %}
 </ul>

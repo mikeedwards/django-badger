@@ -1,10 +1,11 @@
 {% extends "badger/base.html" %}
+{%load i18n %}
 
 {% block pageid %}badges{% endblock %}
 
 {% block content %}
 <section class="badges_list">
-    <h2>Badges</h2>
+    <h2>{% trans "Shanbay Badges" %}</h2>
     {% include "badger/includes/badges_list.html" %}
 </section>
 {% endblock %}

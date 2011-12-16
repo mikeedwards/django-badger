@@ -1,11 +1,18 @@
 <ul class="badges clearfix">
     {% for award in award_list %}
         <li class="badge">
-            <a href="{{ award.get_absolute_url }}" class="image"><img src="{{ award.image.url }}"
-                alt="{{ award.badge.title }}" width="128" height="128" /></a>            
-            <a href="{{ award.get_absolute_url }}" class="label">
+            <a href="{{ award.badge.get_absolute_url }}" class="image"><img src="{{ award.image.url }}"
+                alt="{{ award.badge.title }}" width="32" height="32" />
                 <span class="title">{{ award.badge.title }}</span></a>
+            </a>            
+            {%if award.prize_code.used%}
+            <span class="prize button">已领取</span>
+            {%else%}
+            <a class="prize button" href="{% url prize_code award.prize_code.key_md5%}">领取贝壳</a>
+            {%endif%}
+            <div class="clearfix"></div>
         </li>
+        <div class="badge-bottom"></div>
     {% endfor %}
 </ul>
 {%comment%}

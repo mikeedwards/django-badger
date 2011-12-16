@@ -1,37 +1,29 @@
 {% extends "badger/base.html" %}
+{% load i18n %}
 
+{% load avatar_tags%}
 {% block pageid %}badge_detail{% endblock %}
 
 {% block content %}
 
-<section id="detail">
-    <h2>Badge detail</h2>
+<div id="detail">
+    <h2>{% trans "Badge detail" %}</h2>
     {% include "badger/includes/badge_full.html" %}
-</section>
+</div>
 
 {% if award_list %}
-<section id="recent_awardees">
-    <h2>Recent awards</h2>
-    <nav><ul>
-        <li>
-            <a href="{% url badger.awards_list_for_badge badge.slug %}">More...</a>
-            <a href="{% url badger.awards_by_badge badge.slug %}"><img src="{{MEDIA_URL}}/img/feed-icon-14x14.png" /></a>
-        </li>
-    </ul></nav>
+<div id="recent_awardees">
+    <h2>{% trans "Recent awards"%}</h2>
     <ul class="awardees clearfix">
         {% for award in award_list %}
             <li class="awardee">
-                <a href="{{ award.get_absolute_url }}" class="avatar_image">
-                    
-{%comment%}<img src="{{ user_avatar(award.user) }}"
-                    alt="{{ award.badge.title }}" width="128" height="128" /></a>            
-{%endcomment%}
-                <a href="{{ award.get_absolute_url }}" class="label">
-                    <span class="user">{{ award.user }}</span></a>
+                <a href="{%url user_space award.user.username%}" class="avatar_image">
+                {% avatar award.user 30%}
+                </a>
             </li>
         {% endfor %}
     </ul>
-</section>
+</div>
 {% endif %}
 
 {% endblock %}
