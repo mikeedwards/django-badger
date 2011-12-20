@@ -132,13 +132,12 @@ def get_permissions_for(self, user):
     return perms
 
 
-def mk_upload_to(field_fn):
+def mk_upload_to(field_fn, size='large'):
     """upload_to builder for file upload fields"""
     def upload_to(instance, filename):
         base, slug = instance.get_upload_meta()
         time_now = int(time())
-        return '%(base)s/%(slug)s_%(time_now)s_%(field_fn)s' % dict(
-            time_now=time_now, slug=slug, base=base, field_fn=field_fn)
+        return '%(base)s/%(slug)s_%(size)s_%(field_fn)s' % dict(slug=slug, size=size, base=base, field_fn=field_fn)
     return upload_to
 
 
@@ -451,7 +450,7 @@ class Award(models.Model):
         super(Award, self).save(*args, **kwargs)
         # Called after super.save(), so we have some auto-gen fields like pk
         # and created
-        self.bake_assertion_into_image()
+        #self.bake_assertion_into_image()
 
         if is_new:
             # Only fire was-awarded signal on a new award.
