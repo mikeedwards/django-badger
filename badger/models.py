@@ -624,4 +624,5 @@ class BadgeAwarder(object):
             return
         badge = Badge.objects.get(slug=self.badge_type)
         badge.award_to(self.awardee)
+        self.awardee.message_set.create(message=_("You have won the badge:%(title)s") % ({'title':badge.title}))
 
