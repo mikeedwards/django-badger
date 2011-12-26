@@ -21,6 +21,8 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.utils import simplejson as json
 from django.contrib.auth.models import User, AnonymousUser
 from django.contrib.sites.models import Site
+from django.utils.translation import ugettext as _
+
 
 from django.template.defaultfilters import slugify
 
