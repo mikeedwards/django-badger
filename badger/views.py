@@ -165,7 +165,8 @@ def awards_by_user(request, username):
         try:
             prize_code = PrizeCode.objects.get(key_md5=prize_code.key_md5)
         except PrizeCode.DoesNotExist:
-            prize_code.save()
+            pass
+            #prize_code.save()
         award.__setattr__('prize_code',prize_code)
 
     return render_to_response('badger/awards_by_user.html', dict(
