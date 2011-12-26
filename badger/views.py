@@ -47,7 +47,7 @@ except ImportError:
 from .forms import (BadgeAwardForm)
 
 BADGE_PAGE_SIZE = 21
-MAX_RECENT = 10
+MAX_RECENT = 50
 
 
 def home(request):
