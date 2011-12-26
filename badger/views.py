@@ -46,7 +46,7 @@ except ImportError:
 
 from .forms import (BadgeAwardForm)
 
-BADGE_PAGE_SIZE = 21
+BADGE_PAGE_SIZE = 50
 MAX_RECENT = 50
 
 
