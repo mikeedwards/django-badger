@@ -159,7 +159,7 @@ def awards_by_user(request, username):
     user = get_object_or_404(User, username=username)
     awards = Award.objects.filter(user=user)
     for award in awards:
-        key = "%s_%s_badge_%s" % (user.username, PrizeCode.BADGE_AWARD, award.badge.slug) 
+        key = "%s_%s_badge_%s" % (user.id, PrizeCode.BADGE_AWARD, award.badge.slug) 
         prize_code = PrizeCode(user=user, award_type=PrizeCode.BADGE_AWARD, date=datetime.date.today(), amount=award.badge.points)
         prize_code.set_key(key)
         try:
