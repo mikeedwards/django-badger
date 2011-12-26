@@ -1,3 +1,0 @@
-recursive-include badger/locale *
-recursive-include pages/ *.mo
-recursive-include pages/ *.po
