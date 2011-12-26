@@ -1,0 +1,3 @@
+recursive-include badger/locale *
+recursive-include badger/ *.mo
+recursive-include badger/ *.po
