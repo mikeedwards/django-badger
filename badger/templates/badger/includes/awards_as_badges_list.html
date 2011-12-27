@@ -3,8 +3,8 @@
         <li class="badge">
             <a href="{{ award.badge.get_absolute_url }}" class="image"><img src="{{ award.badge.image.url }}"
                 alt="{{ award.badge.title }}" width="32" height="32" />
-                <span class="title">{{ award.badge.title }}</span></a>
             </a>            
+            <span class="title">{{ award.badge.title }}</span></a>
 {%comment%}
             {%if award.prize_code.used%}
             <span class="prize button">已领取</span>

@@ -58,7 +58,7 @@ msgstr "最近颁发"
 #: templates/badger/awards_by_user.html:8
 #, python-format
 msgid "Awards for %(user)s"
-msgstr "颁发给%(user)s的徽章"
+msgstr "颁发给 <b>%(user)s</b> 的徽章"
 
 #: templates/badger/badge_detail.html:10
 msgid "Badge detail"
