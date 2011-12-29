@@ -15,6 +15,7 @@ from django.template import RequestContext
 from django.template.defaultfilters import slugify
 
 from quota.models import PrizeCode
+from points.models import UserPoint
 
 try:
     from commons.urlresolvers import reverse
@@ -157,6 +158,7 @@ def award_detail(request, slug, id, format="html"):
 def awards_by_user(request, username):
     """Badge awards by user"""
     user = get_object_or_404(User, username=username)
+    user_point = UserPoint.objects.get_or_create(user=user)
     awards = Award.objects.filter(user=user)
     for award in awards:
         key = "%s_%s_badge_%s" % (user.id, PrizeCode.BADGE_AWARD, award.badge.slug) 
@@ -170,7 +172,7 @@ def awards_by_user(request, username):
         award.__setattr__('prize_code',prize_code)
 
     return render_to_response('badger/awards_by_user.html', dict(
-        user=user, award_list=awards,
+        user=user, award_list=awards,points=user_point.points
     ), context_instance=RequestContext(request))
 
 

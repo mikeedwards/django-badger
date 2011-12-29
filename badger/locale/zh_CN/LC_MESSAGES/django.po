@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-21 14:18+0800\n"
+"POT-Creation-Date: 2011-12-29 13:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,11 +37,11 @@ msgstr ""
 msgid "Recent awards of \"%s\""
 msgstr ""
 
-#: models.py:299
+#: models.py:301
 msgid "Cannot process image"
 msgstr ""
 
-#: models.py:627
+#: models.py:629
 #, python-format
 msgid "You have won the badge:%(title)s"
 msgstr "你获得了“%(title)s”徽章"
@@ -55,7 +55,16 @@ msgstr ""
 msgid "Recent awards"
 msgstr "最近颁发"
 
-#: templates/badger/awards_by_user.html:8
+#: templates/badger/awards_by_user.html:9
+msgid "Growth points for %(user)s"
+msgstr "<b>%(user)s</b> 的成长值"
+
+#: templates/badger/awards_by_user.html:10
+#, python-format
+msgid "Growth points:%(points)s"
+msgstr ""
+
+#: templates/badger/awards_by_user.html:13
 #, python-format
 msgid "Awards for %(user)s"
 msgstr "颁发给 <b>%(user)s</b> 的徽章"
