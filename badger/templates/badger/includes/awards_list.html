@@ -2,10 +2,10 @@
     {% for award in award_list %}
         <li class="award">
 
-            <a href="{{ award.get_absolute_url }}" class="award_image"><img src="{{ award.badge.image.url }}"
+            <a href="#" class="award_image"><img src="{{ award.badge.image.url }}"
                 alt="{{ award.badge.title }}" width="128" height="128" /></a>
         
-            <a href="{{ award.get_absolute_url }}" class="label">
+            <a href="#" class="label">
                 <span class="badge_title">{{ award.badge.title }}</span>
                 <span class="relation">awarded to</span>
                 <span class="user">{{ award.user }}</span>

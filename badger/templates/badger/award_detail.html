@@ -4,9 +4,11 @@
 
 {% block pageid %}award_detail{% endblock %}
 
-{% block content %}
-
+{%block content_title%}
 <h2>{% trans "Award detail" %}</h2>
+{%endblock%}
+{% block right %}
+
 
 <section class="award">
     {% include "badger/includes/award_full.html" %}

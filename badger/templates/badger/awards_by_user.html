@@ -3,15 +3,16 @@
 {% load points_tags %}
 {% block pageid %}badge_awards_by_user{% endblock %}
 {% block navsubmenu %}{% endblock %}
-
-{% block content %}
+{% block content_title %}
+    <h2>{% blocktrans  %}Awards for {{user}}{%endblocktrans%}</h2>
+{%endblock %}
+{% block right %}
 <div class="awards_list">
     <div class="growth_points highlight">{%blocktrans%}Growth points:{{points}}{%endblocktrans %}
 {%user_levels user%}
     </div> 
     </div>
 <section class="awards_list">
-    <h2>{% blocktrans  %}Awards for {{user}}{%endblocktrans%}</h2>
     {% include "badger/includes/awards_as_badges_list.html" %}
 </section>
 {% endblock %}

@@ -4,16 +4,18 @@
 {% load avatar_tags%}
 {% block pageid %}badge_detail{% endblock %}
 
-{% block content %}
+{%block content_title%}
+    <h2>{% trans "Badge detail" %}</h2>
+{%endblock%}
+{% block right %}
 
 <div id="detail">
-    <h2>{% trans "Badge detail" %}</h2>
     {% include "badger/includes/badge_full.html" %}
 </div>
 
 {% if award_list %}
 <div id="recent_awardees">
-    <h2>{% trans "Recent awards"%}</h2>
+    <h3>{% trans "Recent awards"%}</h3>
     <ul class="awardees clearfix">
         {% for award in award_list %}
             <li class="awardee">

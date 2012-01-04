@@ -1,3 +1,14 @@
-{% extends "index.html" %}
-{% block navmenu %}badge_page{% endblock %}
-{% block navsubmenu %}{% endblock %}
+{% extends "base.html" %}
+
+{% block css %}
+      <link href="/css/apps/badges/badge.less" type="text/css" rel="stylesheet/less">
+{% endblock css %}
+{%block left %}
+    <div class="nav-box">
+        <h3>徽章</h3>
+        <ul>
+            <li><a href="{%url badger.awards_by_user user.username%}">我的徽章</a></li>
+            <li><a href="{%url badger.badges_list%}">全部徽章</a></li>
+        </ul>
+    </div>
+{%endblock left %}

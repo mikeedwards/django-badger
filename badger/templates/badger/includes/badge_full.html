@@ -1,9 +1,9 @@
 <div class="badge" data-slug="{{ badge.slug }}">
     {% if award and award.image %}
-            <div class="image"><a href="{{ badge.get_absolute_url }}" class="image"><img src="{{ award.image.url }}" /></a></div>
+            <div class="image"><a href="#" class="image"><img src="{{ award.image.url }}" /></a></div>
     {% else %}
         {%if badge.image %}
-            <div class="image"><a href="{{ badge.get_absolute_url }}" class="image"><img src="{{ badge.image.url }}"/></a></div>
+            <div class="image"><a href="#" class="image"><img src="{{ badge.image.url }}"/></a></div>
         {%endif%}
     {% endif %}
         <h2 class="title">{{ badge.title }}</h2>
