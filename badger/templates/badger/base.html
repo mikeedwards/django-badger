@@ -7,7 +7,9 @@
     <div class="nav-box">
         <h3>徽章</h3>
         <ul>
+            {%if user.is_authenticated%}
             <li><a href="{%url badger.awards_by_user user.username%}">我的徽章</a></li>
+            {%endif%}
             <li><a href="{%url badger.badges_list%}">全部徽章</a></li>
         </ul>
     </div>
