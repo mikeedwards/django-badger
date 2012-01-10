@@ -28,7 +28,7 @@ Installation
 
 - TBD, see `badger2 <https://github.com/lmorchard/badger2>`_ for an example
   site setup
-- ``pip install git://github.com/lmorchard/django-badger.git#egg=django-badger``
+- ``pip install -e git://github.com/mikeeedwards/django-badger.git#egg=django-badger``
 
 Settings
 --------
