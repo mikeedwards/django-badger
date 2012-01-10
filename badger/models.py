@@ -269,6 +269,7 @@ class Badge(models.Model):
     title = models.CharField(max_length=255, blank=False, unique=True)
     slug = models.SlugField(blank=False, unique=True)
     description = models.TextField(blank=True)
+    criteria = models.TextField(blank=True)
     image = models.ImageField(blank=True, null=True,
                               storage=BADGE_UPLOADS_FS,
                               upload_to=mk_upload_to('image.png'))
