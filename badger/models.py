@@ -278,7 +278,7 @@ class Badge(models.Model):
     creator = models.ForeignKey(User, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, blank=False)
     modified = models.DateTimeField(auto_now=True, blank=False)
-    points = models.IntegerField()
+    points = models.IntegerField(default=0, blank=True, null=True)
 
     class Meta:
         unique_together = ('title', 'slug')
