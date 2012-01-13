@@ -435,7 +435,7 @@ class Award(models.Model):
         return ('badger.views.award_detail', (self.badge.slug, self.pk))
 
     def get_upload_meta(self):
-        return ("award", self.badge.slug)
+        return ("award", "%(slug)s%(pk)d" % {'slug':self.badge.slug,'pk':self.pk})
 
     def save(self, *args, **kwargs):
 
@@ -453,7 +453,7 @@ class Award(models.Model):
         super(Award, self).save(*args, **kwargs)
         # Called after super.save(), so we have some auto-gen fields like pk
         # and created
-        #self.bake_assertion_into_image()
+        self.bake_assertion_into_image()
 
         if is_new:
             # Only fire was-awarded signal on a new award.
